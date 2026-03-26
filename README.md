@@ -41,11 +41,11 @@ src/
 
 #  🚀 快速開始
 ## 安裝依賴
-'Bash'
-'npm install'
+`Bash`
+`npm install`
 ## 本地開發環境
-'Bash'
-'npm run dev'
+`Bash`
+`npm run dev`
 ## 編譯並壓縮生產版本
-'Bash'
-'npm run build'
+`Bash`
+`npm run build`
