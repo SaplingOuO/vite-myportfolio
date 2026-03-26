@@ -1,0 +1,29 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg-color: #000000;         /* 主背景：純黑 */
+  --card-bg: #1a1a1a;          /* 組件/卡片底色：深灰 */
+  --text-primary: #ffffff;      /* 主文字：白色 */
+  --text-secondary: #909399;    /* 次要文字：灰色 */
+  --primary-color: #42b883;    /* 品牌色：Vue 綠 */
+  --border-color: #333333;      /* 邊框顏色 */
+}
+
+/* 全域基礎樣式 */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
