@@ -10,6 +10,9 @@ const handleSelect = (key) => {
 </script>
 
 <template>
+  <!-- 點擊el-menu-item時觸發select將網址路徑改為所點選的項目
+       default-active綁定所選路徑的值，讓被選項目為高亮狀。
+  -->
   <el-menu
     :default-active="router.currentRoute.value.path"
     class="navbar-menu"

@@ -1,4 +1,5 @@
 <script setup>
+// 資訊連結平台資料
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/SaplingOuO' },
   { name: 'Email', url: 'mailto:SaplingWork@gmail.com' }
@@ -15,6 +16,7 @@ const socialLinks = [
           <p>© 2026 <strong>Sapling</strong>. Built with Vue 3 & Element Plus</p>
         </el-col>
         
+        <!-- 資訊連結 -->
         <el-col :span="12" :xs="24" class="links">
           <el-space spacer="|">
             <el-link 
