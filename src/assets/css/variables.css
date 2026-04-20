@@ -18,6 +18,7 @@
   --text-secondary: #909399;    /* 次要文字：灰色 */
   --primary-color: #42b883;    /* 品牌色：Vue 綠 */
   --border-color: #333333;      /* 邊框顏色 */
+  --el-menu-hover-bg-color: none;
 }
 
 /* 全域基礎樣式 */

@@ -8,19 +8,19 @@ const timelineEvents = [
     timestamp: '2025 - 2026',
     title: '自學與專案實踐',
     content: '專注於 Vue 3 生態系，結合 GSAP 打造互動視覺。使用 Python 撰寫爬蟲獲取資料，並以 Git 進行版本控制，部署個人作品集。',
-    color: '#67C23A'
+    color: 'var(--primary-color)'
   },
   {
     timestamp: '2017 - 2018',
     title: '網頁設計專業進修 (400hr)',
     content: '於巨匠電腦深入學習 HTML5, CSS3, JS, PHP 與 MySQL。期間建立個人首個網站，奠定網頁開發基石。',
-    color: '#409EFF'
+    color: 'var(--text-primary)'
   },
   {
     timestamp: '2014 - 2016',
     title: '大學時期 - Android 系統開發',
     content: '主修 Java Android 開發。帶領團隊製作「移動定位交友 APP」與「超簡易記帳本」，於多項全國性競賽獲獎。',
-    color: '#409EFF'
+    color: 'var(--text-primary)'
   }
 ]
 
@@ -137,6 +137,7 @@ onMounted(() => {
 }
 
 .event-title {
+  margin-top: 10px;
   margin-bottom: 10px;
   color: var(--primary-color);
 }
