@@ -1,12 +1,13 @@
 # 🚀 My Portfolio 2026
 
-[![Live Demo](https://saplingouo.github.io/vite-myportfolio/)]
+[作品預覽](https://saplingouo.github.io/vite-myportfolio/)
 
 這是一個基於 **Vue 3 (Composition API)** 開發的個人作品集網站。本專案不僅展示了我的前端開發技術，也實踐了動態視覺與模組化開發的思維。
 
 ## 🛠️ 技術棧 (Tech Stack)
 
-* **核心框架**: [Vue 3](https://vuejs.org/) (Vite)
+* **核心框架**: [Vue 3](https://vuejs.org/) - 採用最新 Composition API，建構高性能、響應式的現代化組件。
+* **構建工具**: [Vite](https://cn.vite.dev/guide/) - 提供極速的 HMR 熱更新與優化的生產環境打包體驗。
 * **狀態管理**: [Pinia](https://pinia.vuejs.org/) - 負責全域狀態與資料存取。
 * **路由管理**: [Vue Router](https://router.vuejs.org/) - 實現單頁應用 (SPA) 流暢導航。
 * **動態特效**: [GSAP](https://greensock.com/gsap/) - 處理高品質的進場動畫與交錯視覺效果。
@@ -23,12 +24,12 @@
 
 ### 🎬 高階動態視覺 
 - **精準序列動畫**：捨棄傳統 CSS Transition，改用 GSAP Timeline 管理複雜的進場順序，提升頁面跳轉時的流暢度與層次感。
-- **效能驅動動畫**：實作 stagger 交錯效果與 clearProps 屬性清除，確保動畫結束後不留冗餘樣式，維持響應式佈局的穩定性。
+- **效能驅動動畫**：實作 `stagger` 交錯效果與 `clearProps` 屬性清除，確保動畫結束後不留冗餘樣式，維持響應式佈局的穩定性。
 
 ### 🏗️ 模組化架構與效能優化
-- **高效能數據處理**：利用 Computed 屬性 實作即時篩選邏輯，將「資料處理」與「視圖渲染」徹底分離，確保在多專案展示下依然反應靈敏。
-- **加載速度優化**：配置 路由懶加載 (Lazy Loading) 與 Scroll Behavior，優化首屏加載效能並提供平滑的導航體驗。
-- **自動化部署流程**：編寫 deploy.sh 腳本實現一鍵發布至 GitHub Pages，落實 CI/CD 的開發節奏。
+- **高效能數據處理**：利用 `Computed` 屬性實作即時篩選邏輯，將「資料處理」與「視圖渲染」徹底分離，確保在多專案展示下依然反應靈敏。
+- **加載速度優化**：實作 **路由懶加載 (Lazy Loading)** 與 **Scroll Behavior**，優化首屏加載效能並提供平滑的導航體驗。
+- **自動化部署流程**：腳本串接 Git 命令，將開發到部署的流程自動化，模擬真實開發中的 CI/CD 環境。
 
 ---
 
