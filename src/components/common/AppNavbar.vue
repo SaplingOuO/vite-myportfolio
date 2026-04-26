@@ -1,17 +1,21 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useAppStore } from '@/stores/app'
 import SettingsDialog from './SettingsDialog.vue'
 
 const router = useRouter()
+const appStore = useAppStore()
 
 // 處理選單點擊跳轉
 const handleSelect = (key) => {
+  // 特殊指令：若點選設定圖標，則透過 Pinia 開啟設定彈窗並中斷跳轉
+  // handleSelect 判斷key為'OPEN_SETTINGS'時使用stores/app/app.js中 toggleSettings 方法
   if (key === 'OPEN_SETTINGS') {
-    openSettings();
+    appStore.toggleSettings(true)
     return; // 這裡用 return 是為了中斷後續的 router.push
   }
-  
+  // 常規路由：若 key 為有效路徑，則執行頁面跳轉 (如首頁、作品集等)
   if (key) {
     router.push(key).catch(() => {});
   }

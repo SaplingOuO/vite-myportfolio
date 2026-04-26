@@ -1,7 +1,15 @@
 <script setup>
 import { ref, onMounted, reactive } from 'vue'
-
+import { useAppStore } from '@/stores/app.js'
+import { storeToRefs } from 'pinia'
 // --- 1. 響應式數據定義 (Reactive States) ---
+
+/**
+ * 彈窗顯示狀態控制
+ * 使用 storeToRefs 取得 Pinia 中的狀態，並重新命名為 visible 以對應模板
+ */
+const appStore = useAppStore()
+const { isSettingsOpen: visible } = storeToRefs(appStore)
 
 /**
  * 主題變數配置陣列
@@ -20,7 +28,7 @@ const themeConfig = reactive([
 // 目前選中的預設主題名稱 (下拉選單綁定值)
 const selectedPreset = ref('')
 
-// 預定義的主題色組清單 (Preset Library)
+// 預定義的主題色組清單
 const presets = [
   {
     name: 'Vue 經典 (預設)',
@@ -136,6 +144,7 @@ const presets = [
 
 // --- 2. 主題控制邏輯 (Theme Controller) ---
 
+
 /**
  * 執行主題預設組切換
  * 根據名稱找到對應的顏色物件，批次更新 themeConfig 並套用到 DOM
@@ -156,6 +165,17 @@ const applyPreset = (presetName) => {
 }
 
 /**
+ * 個別色彩變動處理 (當使用者操作顏色選擇器時觸發)
+ * 更新指定的 CSS 變數，並觸發持久化儲存
+ */
+const handleColorChange = (item) => {
+  if (!item.value) return
+
+  document.documentElement.style.setProperty(item.key, item.value)
+  saveToLocalStorage()
+}
+
+/**
  * 資料持久化：將目前的顏色配置轉換為鍵值對物件 (Key-Value)
  * 並以 JSON 字串格式儲存於瀏覽器的 LocalStorage 中
  */
@@ -165,21 +185,6 @@ const saveToLocalStorage = () => {
     return acc
   }, {})
   localStorage.setItem('user-theme-config', JSON.stringify(configToSave))
-}
-
-// 彈窗顯示狀態控制
-const visible = ref(false)
-const open = () => { visible.value = true }
-
-/**
- * 個別色彩變動處理 (當使用者操作顏色選擇器時觸發)
- * 更新指定的 CSS 變數，並觸發持久化儲存
- */
-const handleColorChange = (item) => {
-  if (!item.value) return
-
-  document.documentElement.style.setProperty(item.key, item.value)
-  saveToLocalStorage()
 }
 
 // --- 3. 初始化流程 (Initialization) ---
@@ -200,8 +205,6 @@ onMounted(() => {
   }
 })
 
-// 將方法暴露給父組件使用 (例如 Navbar 呼叫 open 方法)
-defineExpose({ open })
 </script>
 
 <template>

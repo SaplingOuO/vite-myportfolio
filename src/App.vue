@@ -3,11 +3,12 @@ import { RouterView } from 'vue-router'
 // 引入拆分出去的組件
 import AppNavbar from '@/components/common/AppNavbar.vue'
 import AppFooter from '@/components/common/AppFooter.vue'
+import SettingsDialog from '@/components/common/SettingsDialog.vue'
 </script>
 
 <template>
-  <AppNavbar />
   <div class="app-layout">
+    <AppNavbar />
 
     <main class="content">
       <RouterView />
