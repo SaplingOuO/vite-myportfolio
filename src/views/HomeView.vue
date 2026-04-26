@@ -33,7 +33,7 @@ const highlights = [
 onMounted(() => {
   const tl = gsap.timeline({ defaults: { ease: 'back.out(1.7)', duration: 0.4 } })
   tl.from('.hero-title', { y: -50, opacity: 0 })
-      .from('.hero-subtitle', { y: 20, opacity: 0 }, '-=0.4')
+      .from('.hero-subtitle', { y: 20, opacity: 0, clearProps: "all" }, '-=0.4')
       // 使用 .to() 或確保 .from() 的透明度正確
       .from('.cta-btn', { scale: 0, opacity: 0, stagger: 0.2, clearProps: "all" }, '-=0.4')
       .from('.skill-tag', { x: -20, opacity: 0, stagger: 0.1, clearProps: "all" }, '-=0.2')

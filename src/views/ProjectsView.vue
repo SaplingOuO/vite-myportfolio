@@ -46,9 +46,12 @@ const projects = ref([
 const currentTab = ref('All')
 const categories = ['All', 'Web', 'Tools']
 
+// computed 特性:響應式、快取、唯讀性
 const filteredProjects = computed(() => {
+  // 如果是'All'回傳所有的作品
   if (currentTab.value === 'All') return projects.value
-
+  // 如果是特定分類則使用 filter 篩選
+  // 回傳選中的 currentTab.value 內容的給 p.category 回傳
   return projects.value.filter(p => p.category === currentTab.value)
 })
 
