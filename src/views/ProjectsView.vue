@@ -62,10 +62,19 @@ const projects = ref([
     id: 7,
     title: '動漫紀錄庫-gsap', 
     category: 'Web',
-    tech: ['Vue 3', 'Vite', 'GSAP 3', 'Three.js', 'YouTube API', 'Axios'],
+    tech: ['Vue 3', 'Vite', 'GSAP', 'Three.js', 'YouTube API', 'Axios'],
     desc: '實驗 GSAP 物理吸附與拉動特效，整合 YouTube API 並設計台灣區域鎖定之影音自動降級防禦機制。',
     link: 'https://saplingouo.github.io/animerecord-gsap/',
     img: './image/animerecord-gsap.png'
+  },
+  {
+    id: 8,
+    title: '動漫紀錄庫-gsap-V2', 
+    category: 'Web',
+    tech: ['Vue 3', 'Vite', 'GSAP', 'Python', 'Element plus'],
+    desc: '整合 Python 爬蟲與 Vue 3，以 GSAP 打造可拖曳與動態篩選的動漫地圖，展現前端互動力。',
+    link: 'https://saplingouo.github.io/animerecord-gsap-v2/',
+    img: './image/animerecord-gsap-v2.gif'
   }
 ])
 
